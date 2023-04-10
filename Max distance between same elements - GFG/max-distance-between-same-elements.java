@@ -28,17 +28,17 @@ class GFG
 class Solution
 {
     int maxDistance(int arr[], int n)
+    
     {
         HashMap<Integer, Integer> map = new HashMap<>();
         int max = 0;
-        for(int i =0; i<n; i++){
-            if (!map.containsKey(arr[i])) {
-            map.put(arr[i], i);
-        }
-        else{
-            max = Math.max(max , i- map.get(arr[i]));
-        }
-        
+        for(int i =0; i<n;i++){
+            if(!map.containsKey(arr[i])){
+                map.put(arr[i], i);
+            }
+            else{
+                max = Math.max(max, i- map.get(arr[i]));
+            }
         }
         return max;
         
