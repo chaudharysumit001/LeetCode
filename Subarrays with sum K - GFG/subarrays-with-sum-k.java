@@ -30,34 +30,34 @@ class GFG{
 
 class Solution
 {
-    static int findSubArraySum(int nums[], int n, int k){
-        int prefixSum=0;
-        Map<Integer,Integer> hmap=new HashMap<>();
-       hmap.put(0,1);
-       int count=0;
-       for(int i=0;i<n;i++){
-           prefixSum=prefixSum+nums[i];
-           if(hmap.containsKey(prefixSum-k)){
-               count=count+hmap.get(prefixSum-k);
-               if(hmap.containsKey(prefixSum)){
-                    int value=hmap.get(prefixSum);
-                    hmap.put(prefixSum,value+1);
-               }
-               else{
-                   hmap.put(prefixSum,1);
-               }
-           }
-           else{
-              if(hmap.containsKey(prefixSum)){
-                    int value=hmap.get(prefixSum);
-                    hmap.put(prefixSum,value+1);
-               }
-               else{
-                   hmap.put(prefixSum,1);
-               }
-           }
-       }
-       return count;
-        
+    static int findSubArraySum(int arr[], int n, int k)
+    {
+        int prefixSum =0;
+        int count =0;
+        Map <Integer, Integer> map = new HashMap<>();
+        map.put(0,1);
+        for(int i =0; i<n;i++){
+            prefixSum += arr[i];
+            if(map.containsKey(prefixSum - k)){
+                count += map.get(prefixSum -k);
+                if(map.containsKey(prefixSum)){
+                    int val = map.get(prefixSum);
+                    map.put(prefixSum,val+1);
+                }
+                else{
+                    map.put(prefixSum, 1);
+                }
+            }
+            else {
+                if(map.containsKey(prefixSum)){
+                    int val = map.get(prefixSum);
+                    map.put(prefixSum, val+1);
+                }
+                else{
+                    map.put(prefixSum , 1);
+                }
+            }
+        }
+        return count;
     }
 }
