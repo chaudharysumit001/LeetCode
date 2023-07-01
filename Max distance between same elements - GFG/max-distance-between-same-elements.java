@@ -25,22 +25,41 @@ class GFG
 
 
 // your task is to complete this function
+// class Solution
+// {
+//     int maxDistance(int arr[], int n)
+    
+//     {
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         int max = 0;
+//         for(int i =0; i<n;i++){
+//             if(!map.containsKey(arr[i])){
+//                 map.put(arr[i], i);
+//             }
+//             else{
+//                 max = Math.max(max, i- map.get(arr[i]));
+//             }
+//         }
+//         return max;
+        
+//     }
+// }
+
 class Solution
 {
-    int maxDistance(int arr[], int n)
-    
+    int maxDistance(int arr[],int n)
     {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int max = 0;
-        for(int i =0; i<n;i++){
-            if(!map.containsKey(arr[i])){
-                map.put(arr[i], i);
-            }
-            else{
-                max = Math.max(max, i- map.get(arr[i]));
-            }
-        }
-        return max;
+        Map<Integer , Integer> map = new HashMap<>();
         
+        int max =0;
+        for(int i=0; i<n;i++){
+            if(!map.containsKey(arr[i]))
+            map.put(arr[i],i);
+        
+        else {
+            max = Math.max(max, i- map.get(arr[i]));
+        }
+    }
+        return max;
     }
 }
