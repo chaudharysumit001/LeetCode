@@ -32,3 +32,34 @@ class Solution {
         return lst;
     }
 }
+
+
+
+// class Solution {
+//     public List<String> commonChars(String[] words) {
+//         List<String> list = new ArrayList<>();
+        
+//         Map<Character, Integer> minfreq = new HashMap<>();
+        
+//         for(char ch = 'a'; ch <= 'z';ch++){
+//             minfreq.put(ch,101);
+//         }
+//         for(String s: words){
+//             Map<Character, Integer> currfreq = new HashMap<>();
+//         for(int i = 0; i < s.length(); i++){
+//             currfreq.put(s.charAt(i),currfreq.getOrDefault(s.charAt(i),0) + 1);
+//         }
+        
+//         for(char ch = 'a'; ch <= 'z';ch++){
+//                                        minfreq.put(ch,Math.min(minfreq.getOrDefault(ch,0),currfreq.getOrDefault(ch,0)));
+//         }
+//         for(char ch = 'a'; ch <= 'z'; ch++){
+//             while(minfreq.get(ch) > 0){
+//                 list.add(ch + "");
+//                 minfreq.put(ch,minfreq.get(ch) - 1);
+//             }
+//         }
+//         }   
+//         return list;
+//     }    
+// }
