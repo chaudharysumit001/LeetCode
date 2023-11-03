@@ -10,13 +10,13 @@ class Solution {
             }
         }
 
-        List<Integer> ans = new ArrayList<>();
+        int ans = 0;
         for (int index = 0; index < arr.length; index++) {
             if(arr[index] != index+1){
-                ans.add(arr[index]);
+                ans = arr[index];
             }
         }
-        return ans.get(0); 
+        return ans;
 
     }
     static void swap(int[] arr, int first, int second) {
