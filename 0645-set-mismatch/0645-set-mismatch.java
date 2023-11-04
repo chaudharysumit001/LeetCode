@@ -37,19 +37,12 @@ class Solution {
                 i++;
             }
         }
-        List<Integer> answer = new ArrayList<>();
         for(int index = 0; index < arr.length; index++){
             if(arr[index] != index + 1){
-                answer.add(arr[index]);
-                answer.add(index + 1);
+                return new int[]{arr[index], index + 1};
             }
         }
-        // Convert List<Integer> to int[]
-        int[] result = new int[answer.size()];
-        for (int index = 0; index < answer.size(); index++) {
-            result[index] = answer.get(index);
-        }
-        return result;
+        return new int[]{-1, -1};
     }
 
     static void swap(int arr[], int first, int second){
