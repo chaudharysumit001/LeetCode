@@ -4,24 +4,21 @@ class Solution {
         for(int i = 0; i < nums.length; i++) {
             set.add(nums[i]);
         }
-        
-        int longestSequence = 0;
-        for(int num : set) {
-            // check if num is the starting number of a sequence
-            if(!set.contains(num - 1)) {
+
+        int longestSeq =0; 
+        int currentSeq = 0;
+        for(int num: set){
+            if(!set.contains(num-1)){
                 int currentNum = num;
-                int currentSequence = 1;
+                currentSeq = 1;
                 
-                // find the length of the consecutive sequence
-                while(set.contains(currentNum + 1)) {
+                while(set.contains(currentNum+1)){
+                    currentSeq++;
                     currentNum++;
-                    currentSequence++;
                 }
-                
-                // update the longest sequence if necessary
-                longestSequence = Math.max(longestSequence, currentSequence);
+                longestSeq = Math.max(longestSeq, currentSeq);
             }
         }
-        return longestSequence;
+               return longestSeq;
     }
 }
